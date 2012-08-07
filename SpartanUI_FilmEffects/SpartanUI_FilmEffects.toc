@@ -1,0 +1,9 @@
+## Interface: 40200
+## Title: SpartanUI: |CFF0070DDFilmEffects|r
+## Notes: Adds film grain and other special effects to the gameplay screen
+## Version: 4.2.0.0
+## Author: Atriace, Beladona, Strife
+## OptionalDeps: SpartanUI
+## SavedVariablesPerCharacter: FEDB
+
+SpartanUI_FilmEffects.lua

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/69/trunk/SpartanUI/SpartanUI_PlayerFrames/scripts
+END
+Unit-PlayerFrame.lua
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/53/trunk/SpartanUI/SpartanUI_PlayerFrames/scripts/Unit-PlayerFrame.lua
+END
+Unit-TargetTargetFrame.lua
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/!svn/ver/16/trunk/SpartanUI/SpartanUI_PlayerFrames/scripts/Unit-TargetTargetFrame.lua
+END
+Unit-FocusFrame.lua
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/16/trunk/SpartanUI/SpartanUI_PlayerFrames/scripts/Unit-FocusFrame.lua
+END
+Slash-Commands.lua
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/45/trunk/SpartanUI/SpartanUI_PlayerFrames/scripts/Slash-Commands.lua
+END
+Global-Framework.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/16/trunk/SpartanUI/SpartanUI_PlayerFrames/scripts/Global-Framework.xml
+END
+Global-Framework.lua
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/69/trunk/SpartanUI/SpartanUI_PlayerFrames/scripts/Global-Framework.lua
+END
+Global-Features.lua
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/37/trunk/SpartanUI/SpartanUI_PlayerFrames/scripts/Global-Features.lua
+END
+Unit-PlayerPetFrame.lua
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/16/trunk/SpartanUI/SpartanUI_PlayerFrames/scripts/Unit-PlayerPetFrame.lua
+END
+Unit-TargetFrame.lua
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/16/trunk/SpartanUI/SpartanUI_PlayerFrames/scripts/Unit-TargetFrame.lua
+END
+Unit-TargetFocusFrame.lua
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/66/trunk/SpartanUI/SpartanUI_PlayerFrames/scripts/Unit-TargetFocusFrame.lua
+END

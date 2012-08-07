@@ -1,0 +1,14 @@
+## Interface: 50001
+## Title: SpartanUI: |CFF0070DDParty Frames|r
+## Notes: Party Frames designed to complement SpartanUI
+## Version: 5.0.1
+## Author: Atriace, Beladona, Strife, Medmerd
+## X-Category: User Interfaces
+## X-Email: code@spartanui.com, Medmerd@gmail.com
+## X-Website: http://www.spartanui.com
+## RequiredDeps: SpartanUI, oUF
+## OptionalDeps: SpartanUI_PlayerFrames
+
+scripts\Global-Framework.xml
+scripts\Unit-PartyFrames.lua
+scripts\Slash-Commands.lua

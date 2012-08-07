@@ -1,0 +1,18 @@
+## Interface: 50001
+## Title: SpartanUI: |CFF0070DDPlayer Frames|r
+## Notes: Player and Target Frames designed to complement SpartanUI
+## Version: 5.0.1
+## Author: Atriace, Beladona, Strife, Medmerd
+## X-Category: User Interfaces
+## X-Email: code@spartanui.com, Medmerd@gmail.com
+## X-Website: http://www.spartanui.com
+## RequiredDeps: SpartanUI, oUF
+
+scripts\Global-Framework.xml
+scripts\Unit-PlayerFrame.lua
+scripts\Unit-PlayerPetFrame.lua
+scripts\Unit-TargetFrame.lua
+scripts\Unit-TargetTargetFrame.lua
+scripts\Unit-FocusFrame.lua
+scripts\Unit-TargetFocusFrame.lua
+scripts\Slash-Commands.lua

@@ -1,0 +1,9 @@
+## Interface: 40200
+## Title: SpartanUI: |CFF0070DDSpinCam|r
+## Notes: Causes the camera to spin around your character when you go AFK
+## Version: 4.2.0.0
+## Author: Atriace, Beladona, Strife
+## OptionalDeps: SpartanUI
+## SavedVariablesPerCharacter: SpinCamData
+
+SpartanUI_SpinCam.lua
