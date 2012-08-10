@@ -43,31 +43,18 @@ local updateSpartanOffset = function() -- handles SpartanUI offset based on sett
 				if point == "BOTTOMLEFT" then fubar = fubar + bar:GetHeight(); end
 			end
 		end
-		if (_G["Titan_Bar__Display_AuxBar"] and TitanPanelGetVar("AuxBar_Show")) then
+		
+        --2012.08.10 - med - update bar names
+		if _G["Titan_Bar__Display_AuxBar"] ~= nil then
 			local PanelScale = TitanPanelGetVar("Scale") or 1
 			local bar = _G["Titan_Bar__Display_AuxBar"]
 			titan = titan + (PanelScale * bar:GetHeight());
 		end
-		if (_G["Titan_Bar__Display_AuxBar2"] and TitanPanelGetVar("AuxBar2_Show")) then
+		if _G["Titan_Bar__Display_AuxBar2"] ~= nil then
 			local PanelScale = TitanPanelGetVar("Scale") or 1
 			local bar = _G["Titan_Bar__Display_AuxBar2"]
 			titan = titan + (PanelScale * bar:GetHeight());
 		end
--- "old way" of adjusting bottom
---		if (_G["TitanPanelAuxBarButton"] and TitanPanelGetVar("BothBars")) then
---			local Double = TitanPanelGetVar("AuxDoubleBar")
---			local PanelScale = TitanPanelGetVar("Scale") or 1
---			local bar = _G["TitanPanelAuxBarButton"]
---			titan = titan + (PanelScale * bar:GetHeight());
---			if Double == 2 then titan = titan + (PanelScale * bar:GetHeight()); end
---		end
---		if (_G["TitanPanelBarButton"] and (TitanPanelGetVar("Position") == 2)) then
---			local Double = TitanPanelGetVar("DoubleBar")
---			local PanelScale = TitanPanelGetVar("Scale") or 1
---			local bar = _G["TitanPanelBarButton"]
---			titan = titan + (PanelScale * bar:GetHeight());
---			if Double == 2 then titan = titan + (PanelScale * bar:GetHeight()); end
---		end
 		offset = max(fubar + titan,1);
 	end
 	if (round(offset) ~= round(anchor:GetHeight())) then anchor:SetHeight(offset); end

@@ -14,23 +14,16 @@ do
 			end
 		end
 						
-		--2012.08.05 - med - titan panel exists. Calc off set for buff frame.
-		if _G["TitanPanelBarButton"] ~= nil then
-			-- local fullversion = GetAddOnMetadata("Titan", "Version")
-			local nTitleBarCnt = TitanPanelGetVar("DoubleBar")
+		--2012.08.10 - med - update bar names
+		if _G["Titan_Bar__Display_Bar"] ~= nil then
 			local PanelScale = TitanPanelGetVar("Scale") or 1
-			local bar = _G["TitanPanelBarButton"];
-			local pos = TitanPanelGetVar("Position");
-			-- addon:Print("height: "..bar:GetHeight());	
-			-- addon:Print("pos: "..pos);	
-			-- addon:Print("Addon: Titan_Panel not nil");	
-				
-			if nTitleBarCnt == 1 and pos == 1 then
-				titan = PanelScale * bar:GetHeight();
-			elseif nTitleBarCnt == 2 and pos == 1 then
-				titan = PanelScale * (bar:GetHeight() * 2);
-			end
-			
+			local bar = _G["Titan_Bar__Display_Bar"]
+			titan = titan + (PanelScale * bar:GetHeight());
+		end
+		if _G["Titan_Bar__Display_Bar2"] ~= nil then
+			local PanelScale = TitanPanelGetVar("Scale") or 1
+			local bar = _G["Titan_Bar__Display_Bar2"]
+			titan = titan + (PanelScale * bar:GetHeight());
 		end
 		
 		offset = max(fubar + titan,1);
