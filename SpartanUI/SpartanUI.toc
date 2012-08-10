@@ -1,7 +1,7 @@
 ## Interface: 50001
 ## Title: SpartanUI |CFF0070DDCore|r
 ## Notes: User Interface combining elegant artwork with well designed features.
-## Version: 5.0.1
+## Version: 5.0.1 - 2012.08.10a
 ## Author: Atriace, Beladona, Strife, Medmerd
 ## X-Category: User Interfaces
 ## X-Email: code@spartanui.com, medmerd@gmail.com
