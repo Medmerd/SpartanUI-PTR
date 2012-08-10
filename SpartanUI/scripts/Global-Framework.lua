@@ -94,7 +94,7 @@ function module:OnInitialize()
 		MainMenuBar:Hide();
 		hooksecurefunc(UIParent,"Hide",function() updateSpartanViewport(false); end);
 		hooksecurefunc(UIParent,"Show",function() updateSpartanViewport(true); end);
-		hooksecurefunc("updateContainerFrameAnchors",function() -- fix bag offsets
+		hooksecurefunc("UpdateContainerFrameAnchors",function() -- fix bag offsets
 			local frame, xOffset, yOffset, screenHeight, freeScreenHeight, leftMostPoint, column
 			local screenWidth = GetScreenWidth()
 			local containerScale = 1
