@@ -6,21 +6,65 @@ oUF:SetActiveStyle("Spartan_PlayerFrames");
 addon.player = oUF:Spawn("player","SUI_PlayerFrame");
 addon.player:SetPoint("BOTTOMRIGHT",SpartanUI,"TOP",-72,-3);
 
+
+-- 2012.08.26 - Med - Removed as new location dodnt need different sizes for each spec.
+-- function WarlockPowerFrame_Relocate()
+-- 	local spec = GetSpecialization();
+-- 	if ( spec == SPEC_WARLOCK_AFFLICTION ) then
+		-- set up Affliction
+-- 		WarlockPowerFrame:SetScale(.85);
+-- 		WarlockPowerFrame:SetPoint("TOPLEFT",addon.player, "BOTTOMLEFT", 60, 14); --"TOPLEFT",8,-2);
+-- 	elseif ( spec == SPEC_WARLOCK_DESTRUCTION ) then
+		-- set up Destruction
+-- 		WarlockPowerFrame:SetScale(0.85);
+-- 		WarlockPowerFrame:SetPoint("TOPLEFT",addon.player, "BOTTOMLEFT", 60, 70); --"TOPLEFT",14,-2);
+-- 	elseif ( spec == SPEC_WARLOCK_DEMONOLOGY ) then
+		-- set up Demonic
+-- 		WarlockPowerFrame:SetScale(1);
+-- 		WarlockPowerFrame:SetPoint("TOPLEFT",addon.player, "BOTTOMLEFT", 60, 14); --"TOPRIGHT",15,15);
+		-- SetPoint("TOPLEFT",addon.player,"BOTTOMLEFT",60,14);
+-- 	else
+		-- no spec
+-- 	end
+-- end
+
 do -- relocate the warlock ShardBar
-	hooksecurefunc(ShardBarFrame,"SetPoint",function(_,_,parent)
+	hooksecurefunc(WarlockPowerFrame,"SetPoint",function(_,_,parent)
 		if (parent ~= addon.player) then
-			ShardBarFrame:ClearAllPoints();
-			ShardBarFrame:SetPoint("TOPLEFT",addon.player,"BOTTOMLEFT",2,-2);
+			WarlockPowerFrame:ClearAllPoints();
+			WarlockPowerFrame:SetPoint("TOPLEFT",addon.player,"BOTTOMLEFT",70, 0); -- 2,-2);
 		end
 	end);
-	ShardBarFrame:SetParent(addon.player);
-	-- 2012.07.29 - something wrong with Warlock frame?
-	-- ShardBar_OnLoad(ShardBarFrame);
+	WarlockPowerFrame:SetParent(addon.player);
+	WarlockPowerFrame_OnLoad(WarlockPowerFrame);
+	WarlockPowerFrame:SetFrameStrata("MEDIUM");
+	WarlockPowerFrame:SetFrameLevel(4);
+	WarlockPowerFrame:SetScale(.85);
+	WarlockPowerFrame:ClearAllPoints();
+	-- 2012.08.26 - Med - Moved this to be in the same space as other resource bars.
+	WarlockPowerFrame:SetPoint("TOPLEFT",addon.player,"BOTTOMLEFT",70,0); -- 2,-2);
 	
-	ShardBarFrame:SetFrameStrata("MEDIUM");
-	ShardBarFrame:SetFrameLevel(4);
-	ShardBarFrame:SetScale(1); ShardBarFrame:ClearAllPoints();
-	ShardBarFrame:SetPoint("TOPLEFT",addon.player,"TOPLEFT",2,-2);
+	local WarlockSpecWatcher = CreateFrame("Frame");
+	WarlockSpecWatcher:RegisterEvent("PLAYER_TALENT_UPDATE");
+	
+	-- 2012.08.26 - Med - Removed as new location dodnt need different sizes for each spec.
+	-- WarlockPowerFrame_Relocate();
+	--WarlockSpecWatcher:RegisterEvent("ACTIVE_TALENT_GROUP_CHANGED");
+	-- WarlockSpecWatcher:SetScript("OnEvent",function()
+		-- WarlockPowerFrame_Relocate();
+	-- end);
+end
+
+do -- relocate the Priest PriestBarFrame
+	hooksecurefunc(PriestBarFrame,"SetPoint",function(_,_,parent)
+		if (parent ~= addon.player) then
+			PriestBarFrame:ClearAllPoints();
+			PriestBarFrame:SetPoint("TOPLEFT",addon.player,"BOTTOMLEFT", 2,-2);
+		end
+	end);
+	PriestBarFrame:SetParent(addon.player); PriestBarFrame_OnLoad(PriestBarFrame); PriestBarFrame:SetFrameStrata("MEDIUM");
+	PriestBarFrame:SetFrameLevel(4); PriestBarFrame:SetScale(.6); PriestBarFrame:ClearAllPoints();
+	PriestBarFrame:SetPoint("TOPLEFT",addon.player,"TOPLEFT", -4,-2);
 end
 
 do -- relocate the druid EclipseBar

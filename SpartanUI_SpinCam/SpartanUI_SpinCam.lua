@@ -20,8 +20,28 @@ SlashCmdList["SPINCAM"] = function(msg)
 		SetCVar("cameraDistanceMax",CameraDistanceMax or 200);
 		SetView(5);
 	end
+			SetCVar("cameraYawMoveSpeed","8");
+			MoveViewRightStart();
+			SpinCamRunning = true;
+			SetView(5);
 end;
 SLASH_SPINCAM1 = "/spincam";
+
+SlashCmdList["SPINCAMTOGGLE"] = function(msg)
+	if (SpinCamRunning == nil) then
+		SetCVar("cameraYawMoveSpeed","8");
+		MoveViewRightStart();
+		SpinCamRunning = true;
+		SetView(5);
+		DEFAULT_CHAT_FRAME:AddMessage("|cff33ff99SpinCam|r: Spining, to stop type /spin again");
+	elseif (SpinCamRunning == true) then
+		MoveViewRightStop();
+		SetCVar("cameraYawMoveSpeed","230");
+		SpinCamRunning = nil;
+		SetView(5);
+	end
+end;
+SLASH_SPINCAMTOGGLE1 = "/spin"
 ---------------------------------------------------------------------------
 SetCVar("cameraYawMoveSpeed","230");
 local frame = CreateFrame("Frame");

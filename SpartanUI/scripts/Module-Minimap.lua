@@ -208,11 +208,23 @@ function module:OnEnable()
 	modifyMinimapLayout();
 	createMinimapCoords();
 	CheckDefaults();
-	-- LFDSearchStatus:ClearAllPoints();
-	-- LFDSearchStatus:SetPoint("BOTTOM",SpartanUI,"TOP",0,100);
-	module.handleBuff = true
-	-- MinimapWorldMapButton
 
+	module.handleBuff = true
+
+	-- Move the status minimap button
+	QueueStatusMinimapButton:ClearAllPoints();
+	QueueStatusMinimapButton:SetPoint("BOTTOM",SpartanUI,"TOP",0,45);
+	
+	
+	-- testing
+	
+	-- MiniMapWorldMapButton:ClearAllPoints();
+	-- MiniMapWorldMapButton:SetPoint("BOTTOM",SpartanUI,"TOP",0,100);
+	
+	-- CalendarMinimapButton:ClearAllPoints();
+	
+	
+-- MinimapWorldMapButton
 --	hooksecurefunc("WorldStateFrame_CanShowBattlefieldMinimap",function() -- battle field frame
 --		if (( _G[BattlefieldMinimap]:IsShown() ) and (_G[BattlefieldMinimap]:GetScale() ~= "1.5")) then _G[BattlefieldMinimap]:SetScale(1.5); end end);
 end

@@ -4,7 +4,7 @@ local f = CreateFrame("Frame", "FilmEffects", WorldFrame);
 	f:SetFrameStrata("BACKGROUND");
 	
 	f:RegisterEvent("PLAYER_ENTERING_WORLD");
-	f:SetScript("OnEvent",function(event) FG_OnLoad(event); end);
+	f:SetScript("OnEvent",function(self, event, ...) FG_OnLoad(self, event, ...); end);
 	f:SetScript("OnUpdate", function(self, elapsed) FG_OnUpdate(self, elapsed); end);
 ---------------------------------------------------------------------------
 FEDB = FEDB or {};
