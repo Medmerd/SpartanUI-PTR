@@ -1,5 +1,10 @@
 PTR - 5.0
 
+Issues:
+2012.08.29 - med
+	Party Frames - There are deeper issues here that seem to cause groups not to refresh correctly when players leave/enter party. Also had one istance where an entire group re-displayed after all other members had left. While this dosnt cause error messages, it is sure annoying. Attempting to solve asap.
+
+
 Feature Notes:
 2012.08.05 - med
    - Making the players buffs larger then other player's buffs dosnt appear to be suppported by oUF
