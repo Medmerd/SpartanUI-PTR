@@ -56,29 +56,35 @@ local petinfo = function(self,event)
 end
 
 local PostUpdateAura = function(self,unit)
-	if suiChar and suiChar.PartyFrames and suiChar.PartyFrames.showAuras == 0 then
-		self:Hide();
-	else
-		self:Show();
+	if UnitIsConnected(unit) then
+		if suiChar and suiChar.PartyFrames and suiChar.PartyFrames.showAuras == 0 then
+			self:Hide();
+		else
+			self:Show();
+		end
 	end
 end
 
 local PostUpdateHealth = function(bar, unit, min, max)
-	if(UnitIsDead(unit)) then
-		bar:SetValue(0);
-		bar.value:SetText"Dead"
-		bar.ratio:SetText""
-	elseif(UnitIsGhost(unit)) then
-		bar:SetValue(0)
-		bar.value:SetText"Ghost"
-		bar.ratio:SetText""
-	else
-		if ( unit:match('partypet') ) then
-			bar.value:SetFormattedText("%s", simple(min))
+	if UnitIsConnected(unit) then
+		if(UnitIsDead(unit)) then
+			bar:SetValue(0);
+			bar.value:SetText"Dead"
+			bar.ratio:SetText""
+		elseif(UnitIsGhost(unit)) then
+			bar:SetValue(0)
+			bar.value:SetText"Ghost"
+			bar.ratio:SetText""
 		else
-			bar.value:SetFormattedText("%s / %s", min,max)
+			if ( unit:match('partypet') ) then
+				bar.value:SetFormattedText("%s", simple(min))
+			else
+				bar.value:SetFormattedText("%s / %s", min,max)
+			end
+			bar.ratio:SetFormattedText("%d%%",(min/max)*100);
 		end
-		bar.ratio:SetFormattedText("%d%%",(min/max)*100);
+	else
+		
 	end
 end
 
